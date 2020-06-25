@@ -38,7 +38,7 @@ This utilize the same traditional code in Callback; replacing the AsyncTask clas
 RetroFit is a popular Network Request library that utilizes OkHttp and Gson. \
 Paolo<sup>[3]</sup> offers a nice article on the suspend method.
 
-<img width="590" alt="Screen Shot 2020-06-25 at 6 42 27 PM" src="https://user-images.githubusercontent.com/1282659/85806071-aa70c400-b713-11ea-863e-bd3530360dd3.png">
+<img width="590" alt="Screen Shot 2020-06-25 at 6 45 30 PM" src="https://user-images.githubusercontent.com/1282659/85806242-1a7f4a00-b714-11ea-8f8c-069cf03c02fe.png">
 
 
 # References
