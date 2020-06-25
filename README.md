@@ -40,4 +40,5 @@ https://proandroiddev.com/suspend-what-youre-doing-retrofit-has-now-coroutines-s
 
 4. Android Basics : Network by Google \
 Udacity : https://www.udacity.com/course/android-basics-networking--ud843 \
-Github (Fetch earthquake data): https://github.com/udacity/ud843-QuakeReport/commit/3d6bea42dd2f67d578cfdbede67f802f4b3997a3
+Github (Fetch earthquake data): \
+https://github.com/udacity/ud843-QuakeReport/commit/3d6bea42dd2f67d578cfdbede67f802f4b3997a3
