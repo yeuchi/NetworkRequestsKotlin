@@ -4,6 +4,7 @@ Network communication has progressed significantly in the last few years.
 This repository is a collection of those strategies, old and new.
 
 ## Sample data
+Using data from Mindorks<sup>[1]</sup>
 
 - BASE URL https://5e510330f2c0d300147c034c.mockapi.io/
 - USER users
