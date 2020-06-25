@@ -25,14 +25,21 @@ Using data from Mindorks<sup>[1]</sup>
 This is the traditional strategy taught by Google when using Java. \
 Detail pattern and source code are available in course: Android Basics : Networking by Google <sup>[4]</sup>
 
+<img width="663" alt="Screen Shot 2020-06-25 at 6 10 54 PM" src="https://user-images.githubusercontent.com/1282659/85805536-3aae0980-b712-11ea-8321-c04ce2fb1720.png">
+
 ## Coroutine 
 This is the recent design pattern recommended by Google when using Kotlin. \
 Example demonstrate the use of corountine with UrlConnection and Scanner. \
 This utilize the same traditional code in Callback; replacing the AsyncTask class.
 
+<img width="410" alt="Screen Shot 2020-06-25 at 6 31 53 PM" src="https://user-images.githubusercontent.com/1282659/85805537-3c77cd00-b712-11ea-849f-fe768d6c8b99.png">
+
 ## RetroFit 2.6 + Coroutine
 RetroFit is a popular Network Request library that utilizes OkHttp and Gson. \
 Paolo<sup>[3]</sup> offers a nice article on the suspend method.
+
+<img width="590" alt="Screen Shot 2020-06-25 at 6 32 03 PM" src="https://user-images.githubusercontent.com/1282659/85805539-3da8fa00-b712-11ea-9333-f48f4a32f8fb.png">
+
 
 # References
 
