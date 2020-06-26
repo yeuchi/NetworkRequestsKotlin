@@ -1,22 +1,12 @@
 package com.ctyeung.networkrequestex
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
-import com.ctyeung.networkrequestex.model.User
-import com.ctyeung.networkrequestex.network_callback.RequestCallback
-import com.ctyeung.networkrequestex.network_corountine.RequestsCoroutine
+import com.ctyeung.networkrequestex.network_callback.RequestsCallback
+import com.ctyeung.networkrequestex.network_coroutine.RequestsCoroutine
 import com.ctyeung.networkrequestex.network_retrofit.RequestsRetrofit
-import com.ctyeung.networkrequestex.network_retrofit.RetrofitBuilder
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -50,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     fun tryCallback() {
         try {
-            var request = RequestCallback()
+            var request = RequestsCallback()
             request.getUsers()
         }
         catch(ex:Exception) {

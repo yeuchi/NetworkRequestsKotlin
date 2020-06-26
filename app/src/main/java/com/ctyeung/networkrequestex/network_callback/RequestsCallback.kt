@@ -7,21 +7,22 @@ import com.google.gson.reflect.TypeToken
 import java.lang.Exception
 import java.net.URL
 
-class RequestCallback : INetworkCallback {
+class RequestsCallback : INetworkCallback {
+    var list:List<User>?=null
 
     fun getUsers() {
-        val url = URL(NetworkUtils.BASE_URL + NetworkUtils.USERS)
+        val urlString = NetworkUtils.BASE_URL + NetworkUtils.USERS
+        val url = URL(urlString)
         var request = AsyncRequest(this)
         request.execute(url)
     }
 
-    override fun onHandleResponse(str: String?):List<User> {
+    override fun onHandleResponse(str: String?) {
         if(null!=str) {
             try {
                 var gson = Gson()
                 val itemType = object : TypeToken<List<User>>() {}.type
-                var users = gson.fromJson<List<User>>(str, itemType)
-                return users
+                this.list = gson.fromJson<List<User>>(str, itemType)
             }
             catch (ex: Exception) {
                 throw Exception("json parse failed")
@@ -29,5 +30,4 @@ class RequestCallback : INetworkCallback {
         }
         throw Exception("network response null")
     }
-
 }

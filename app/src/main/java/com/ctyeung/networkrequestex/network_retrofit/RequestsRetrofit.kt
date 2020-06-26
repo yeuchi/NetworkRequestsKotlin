@@ -9,19 +9,19 @@ import kotlinx.coroutines.runBlocking
 import java.lang.Exception
 
 class RequestsRetrofit {
+    var list: List<User>? = null
 
     fun getUsers() = runBlocking {
-        var users: List<User>? = null
         var scope = CoroutineScope(Dispatchers.IO).launch {
             try {
                 var apiService = RetrofitBuilder.apiService
-                users = apiService.getUsers()
+                list = apiService.getUsers()
             } catch (e: Exception) {
                 throw Exception(e.toString())
             }
         }
         scope.join()
-        onHandleResponse(users)
+        onHandleResponse(list)
     }
 
     fun onHandleResponse(users:List<User>?):List<User>? {
