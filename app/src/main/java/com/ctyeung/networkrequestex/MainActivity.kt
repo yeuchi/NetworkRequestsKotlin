@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.ctyeung.networkrequestex.network_callback.RequestsCallback
 import com.ctyeung.networkrequestex.network_coroutine.RequestsCoroutine
 import com.ctyeung.networkrequestex.network_retrofit.RequestsRetrofit
+import com.ctyeung.networkrequestex.network_volley.RequestsVolley
 
 import java.lang.Exception
 
@@ -16,6 +17,17 @@ class MainActivity : AppCompatActivity() {
         //tryRetrofit()
         //tryCoroutine()
         //tryCallback()
+        tryVolley()
+    }
+
+    fun tryVolley() {
+        try {
+            var request = RequestsVolley()
+            request.getUsers()
+        }
+        catch(ex:Exception) {
+            Toast.makeText(this, "TryVolley() $ex", Toast.LENGTH_LONG).show()
+        }
     }
 
     fun tryRetrofit() {

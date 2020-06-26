@@ -21,10 +21,10 @@ class RequestsRetrofit {
             }
         }
         scope.join()
-        onHandleResponse(list)
+        //onHandleResponse(list)
     }
 
-    fun onHandleResponse(users:List<User>?):List<User>? {
-        return users
+    fun onHandleResponse(users:List<User>?) {
+
     }
 }
