@@ -22,7 +22,8 @@ Using data from Mindorks<sup>[1]</sup>
 ```
 
 ## View - user interface
-Each of the network strategy can be executed individually.
+Each of the network strategy can be executed individually. \
+Number of users loaded is displayed. \
 <img width="400" src="https://user-images.githubusercontent.com/1282659/85897757-933be000-b7c0-11ea-922c-ee909737d281.jpg">
 
 ## Callback - async task
