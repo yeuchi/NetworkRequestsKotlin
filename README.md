@@ -30,7 +30,7 @@ Number of users loaded is displayed. \
 This is the traditional strategy taught by Google when using Java. \
 Detail pattern and source code are available in course: Android Basics : Networking by Google <sup>[4]</sup>
 
-<img width="663" alt="Screen Shot 2020-06-25 at 6 10 54 PM" src="https://user-images.githubusercontent.com/1282659/85805536-3aae0980-b712-11ea-8321-c04ce2fb1720.png">
+<img width="500" alt="Screen Shot 2020-06-25 at 6 10 54 PM" src="https://user-images.githubusercontent.com/1282659/85805536-3aae0980-b712-11ea-8321-c04ce2fb1720.png">
 
 ## Coroutine 
 This is the recent design pattern recommended by Google when using Kotlin. \
