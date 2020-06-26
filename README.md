@@ -43,6 +43,9 @@ Paolo<sup>[3]</sup> offers a nice article on the suspend method.
 
 <img width="590" alt="Screen Shot 2020-06-25 at 6 45 30 PM" src="https://user-images.githubusercontent.com/1282659/85806242-1a7f4a00-b714-11ea-8f8c-069cf03c02fe.png">
 
+# Espresso Tests
+
+https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/java/com/ctyeung/networkrequestex
 
 # References
 
