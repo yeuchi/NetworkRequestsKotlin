@@ -1,7 +1,12 @@
 # NetworkRequestsKotlin
 
-Network communication has progressed significantly in the last few years.
-This repository is a collection of those strategies, old and new.
+Network communication has progressed significantly in the last few years. \
+This project is a collection of those strategies, old and new for comparison. \
+Premise of the exercise is a follows.
+- HTTP Get request
+- handle JSON conversion to Users
+- unit test for each
+- basic UI control to execute each strategy.
 
 ## Sample data
 Using data from Mindorks<sup>[1]</sup>
