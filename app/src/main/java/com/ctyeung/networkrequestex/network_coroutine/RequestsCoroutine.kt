@@ -14,7 +14,7 @@ import java.net.URL
 class RequestsCoroutine {
     var list:List<User>?=null
 
-    fun getUsers() = runBlocking {
+    fun getUsers(refresh:((String)->Unit)? = null) = runBlocking {
         var jsonString:String? = null
         var scope = CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -27,6 +27,7 @@ class RequestsCoroutine {
         }
         scope.join()
         onHandleResponse(jsonString)
+        refresh?.invoke("size:${list?.size}")
     }
 
     fun onHandleResponse(str: String?) {

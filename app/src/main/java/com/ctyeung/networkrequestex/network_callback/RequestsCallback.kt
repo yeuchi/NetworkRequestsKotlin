@@ -9,8 +9,10 @@ import java.net.URL
 
 class RequestsCallback : INetworkCallback {
     var list:List<User>?=null
+    var refreshUI:((String)->Unit)?=null
 
-    fun getUsers() {
+    fun getUsers(refresh:((String)->Unit)? = null) {
+        this.refreshUI = refresh
         val urlString = NetworkUtils.BASE_URL + NetworkUtils.USERS
         val url = URL(urlString)
         var request = AsyncRequest(this)
@@ -23,6 +25,8 @@ class RequestsCallback : INetworkCallback {
                 var gson = Gson()
                 val itemType = object : TypeToken<List<User>>() {}.type
                 this.list = gson.fromJson<List<User>>(str, itemType)
+                this.refreshUI?.invoke("size:${list?.size}")
+                return
             }
             catch (ex: Exception) {
                 throw Exception("json parse failed")

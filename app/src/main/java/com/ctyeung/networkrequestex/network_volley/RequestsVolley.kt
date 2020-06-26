@@ -14,9 +14,7 @@ import java.lang.Exception
 class RequestsVolley {
     var list: List<User>? = null
 
-    fun getUsers() {
-        //val textView = findViewById<TextView>(R.id.text)
-
+    fun getUsers(refresh:((String)->Unit)? = null) {
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(MainApplication.applicationContext())
         val url = NetworkUtils.BASE_URL + NetworkUtils.USERS
@@ -25,6 +23,7 @@ class RequestsVolley {
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> { response ->
                 onHandleResponse(response)
+                refresh?.invoke("size:${list?.size}")
             },
             Response.ErrorListener {
                 throw Exception("That didn't work!")

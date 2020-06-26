@@ -11,7 +11,7 @@ import java.lang.Exception
 class RequestsRetrofit {
     var list: List<User>? = null
 
-    fun getUsers() = runBlocking {
+    fun getUsers(refresh:((String)->Unit)? = null) = runBlocking {
         var scope = CoroutineScope(Dispatchers.IO).launch {
             try {
                 var apiService = RetrofitBuilder.apiService
@@ -21,6 +21,7 @@ class RequestsRetrofit {
             }
         }
         scope.join()
+        refresh?.invoke("size:${list?.size}")
         //onHandleResponse(list)
     }
 
