@@ -10,6 +10,7 @@ import junit.framework.Assert.assertEquals
 class RequestsRetrofitTests {
 
     @Test
+    //fun getUsers() = runBlockingTest {
     fun getUsers() {
         var request = RequestsRetrofit()
         request.getUsers()

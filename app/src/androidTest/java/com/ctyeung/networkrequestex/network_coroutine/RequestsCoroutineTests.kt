@@ -10,6 +10,7 @@ import junit.framework.Assert.assertEquals
 class RequestsCoroutineTests {
 
     @Test
+    //fun getUsers() = runBlockingTest {
     fun getUsers() {
         var request = RequestsCoroutine()
         request.getUsers()
