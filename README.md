@@ -34,6 +34,9 @@ This utilize the same traditional code in Callback; replacing the AsyncTask clas
 
 <img width="410" alt="Screen Shot 2020-06-25 at 6 31 53 PM" src="https://user-images.githubusercontent.com/1282659/85805537-3c77cd00-b712-11ea-849f-fe768d6c8b99.png">
 
+## Volley
+This is the simple demo by Google Volley<sup>[5]</sup>
+
 ## RetroFit 2.6 + Coroutine
 RetroFit is a popular Network Request library that utilizes OkHttp and Gson. \
 Paolo<sup>[3]</sup> offers a nice article on the suspend method.
@@ -56,3 +59,7 @@ https://proandroiddev.com/suspend-what-youre-doing-retrofit-has-now-coroutines-s
 Udacity : https://www.udacity.com/course/android-basics-networking--ud843 \
 Github (Fetch earthquake data): \
 https://github.com/udacity/ud843-QuakeReport/commit/3d6bea42dd2f67d578cfdbede67f802f4b3997a3
+
+5. Google Volley & trainning
+https://developer.android.com/training/volley
+https://github.com/google/volley
