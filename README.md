@@ -40,7 +40,9 @@ This utilize the same traditional code in Callback; replacing the AsyncTask clas
 <img width="410" alt="Screen Shot 2020-06-25 at 6 31 53 PM" src="https://user-images.githubusercontent.com/1282659/85805537-3c77cd00-b712-11ea-849f-fe768d6c8b99.png">
 
 ## Volley
-This is the simple demo code by Google Volley<sup>[5]</sup>
+This is the simple demo code by Google Volley<sup>[5]</sup> \
+
+<img width="407" alt="Screen Shot 2020-06-26 at 3 35 42 PM" src="https://user-images.githubusercontent.com/1282659/85898892-b9fb1600-b7c2-11ea-9d2c-1bdf39f1578a.png">
 
 ## RetroFit 2.6 + Coroutine
 RetroFit is a popular Network Request library that utilizes OkHttp and Gson. \
