@@ -1,7 +1,12 @@
 # NetworkRequestsKotlin
 
-Network communication has progressed significantly in the last few years.
-This repository is a collection of those strategies, old and new.
+Network communication has progressed significantly in the last few years. \
+This project is a collection of those strategies, old and new for comparison. \
+Premise of the exercise is a follows.
+- HTTP Get request
+- handle JSON conversion to Users
+- unit test for each
+- basic UI control to execute each strategy.
 
 ## Sample data
 Using data from Mindorks<sup>[1]</sup>
@@ -21,11 +26,16 @@ Using data from Mindorks<sup>[1]</sup>
 ....
 ```
 
+## View - user interface
+Each of the network strategy can be executed individually. \
+Number of users loaded is displayed. \
+<img width="400" src="https://user-images.githubusercontent.com/1282659/85897757-933be000-b7c0-11ea-922c-ee909737d281.jpg">
+
 ## Callback - async task
 This is the traditional strategy taught by Google when using Java. \
 Detail pattern and source code are available in course: Android Basics : Networking by Google <sup>[4]</sup>
 
-<img width="663" alt="Screen Shot 2020-06-25 at 6 10 54 PM" src="https://user-images.githubusercontent.com/1282659/85805536-3aae0980-b712-11ea-8321-c04ce2fb1720.png">
+<img width="550" alt="Screen Shot 2020-06-25 at 6 10 54 PM" src="https://user-images.githubusercontent.com/1282659/85805536-3aae0980-b712-11ea-8321-c04ce2fb1720.png">
 
 ## Coroutine 
 This is the recent design pattern recommended by Google when using Kotlin. \
@@ -35,7 +45,9 @@ This utilize the same traditional code in Callback; replacing the AsyncTask clas
 <img width="410" alt="Screen Shot 2020-06-25 at 6 31 53 PM" src="https://user-images.githubusercontent.com/1282659/85805537-3c77cd00-b712-11ea-849f-fe768d6c8b99.png">
 
 ## Volley
-This is the simple demo code by Google Volley<sup>[5]</sup>
+This is the simple demo code by Google Volley<sup>[5]</sup> 
+
+<img width="390" alt="Screen Shot 2020-06-26 at 3 35 42 PM" src="https://user-images.githubusercontent.com/1282659/85898892-b9fb1600-b7c2-11ea-9d2c-1bdf39f1578a.png">
 
 ## RetroFit 2.6 + Coroutine
 RetroFit is a popular Network Request library that utilizes OkHttp and Gson. \
@@ -43,7 +55,7 @@ Paolo<sup>[3]</sup> offers a nice article on the suspend method.
 
 <img width="590" alt="Screen Shot 2020-06-25 at 6 45 30 PM" src="https://user-images.githubusercontent.com/1282659/85806242-1a7f4a00-b714-11ea-8f8c-069cf03c02fe.png">
 
-# Espresso Tests
+# Unit Tests
 
 https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/java/com/ctyeung/networkrequestex
 
