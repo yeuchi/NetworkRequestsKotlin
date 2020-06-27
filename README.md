@@ -29,7 +29,7 @@ Using data from Mindorks<sup>[1]</sup>
 ## View - user interface
 Each of the network strategy can be executed individually. \
 Number of users loaded is displayed. \
-<img width="420" alt="Screen Shot 2020-06-27 at 2 34 04 PM" src="https://user-images.githubusercontent.com/1282659/85930611-7ddbba00-b883-11ea-90d5-0e6afc6ee17f.png">
+<img width="420" alt="Screen Shot 2020-06-27 at 2 34 04 PM" src="https://user-images.githubusercontent.com/1282659/85933604-82619c00-b89e-11ea-8803-ef2ebf0fdf02.jpg">
 
 ## Callback - async task
 This is the traditional strategy taught by Google when using Java. \
