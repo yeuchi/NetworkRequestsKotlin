@@ -1,5 +1,6 @@
 package com.ctyeung.networkrequestex.network_coroutine
 
+import com.ctyeung.networkrequestex.base.BaseRequest
 import com.ctyeung.networkrequestex.model.User
 import com.ctyeung.networkrequestex.utilities.NetworkUtils
 import com.google.gson.Gson
@@ -11,10 +12,13 @@ import kotlinx.coroutines.runBlocking
 import java.lang.Exception
 import java.net.URL
 
-class RequestsCoroutine {
-    var list:List<User>?=null
+class RequestsCoroutine : BaseRequest {
 
-    fun getUsers(refresh:((String)->Unit)? = null) = runBlocking {
+    constructor(refresh:((String, String)->Unit)?=null):super(refresh) {}
+
+    fun getUsers() = runBlocking {
+        startTimer()
+
         var jsonString:String? = null
         var scope = CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -27,7 +31,7 @@ class RequestsCoroutine {
         }
         scope.join()
         onHandleResponse(jsonString)
-        refresh?.invoke("size:${list?.size}")
+        super.refresh?.invoke("size:${list?.size}", getElapsedString())
     }
 
     fun onHandleResponse(str: String?) {

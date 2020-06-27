@@ -49,13 +49,14 @@ class MainActivity : AppCompatActivity() {
 
     fun tryRxRetrofit() {
         try {
-            var refreshUI : (String) -> Unit = {
-                    str:String ->
-                binding.txtRxRetrofitUserCount.text = str
+            var refreshUI : (String, String) -> Unit = {
+                    count: String, elapsed: String ->
+                binding.txtRxRetrofitElapsed.text = elapsed
+                binding.txtRxRetrofitUserCount.text = count
             }
 
-            var request = RequestsRxRetrofit()
-            request.getUsers(refreshUI)
+            var request = RequestsRxRetrofit(refreshUI)
+            request.getUsers()
         }
         catch(ex:Exception) {
             Toast.makeText(this, "TryRxRetrofit() $ex", Toast.LENGTH_LONG).show()
@@ -64,13 +65,14 @@ class MainActivity : AppCompatActivity() {
 
     fun tryVolley() {
         try {
-            var refreshUI : (String) -> Unit = {
-                    str:String ->
-                binding.txtVolleyUserCount.text = str
+            var refreshUI : (String, String) -> Unit = {
+                    count: String, elapsed: String ->
+                binding.txtVolleyElapsed.text = elapsed
+                binding.txtVolleyUserCount.text = count
             }
 
-            var request = RequestsVolley()
-            request.getUsers(refreshUI)
+            var request = RequestsVolley(refreshUI)
+            request.getUsers()
         }
         catch(ex:Exception) {
             Toast.makeText(this, "TryVolley() $ex", Toast.LENGTH_LONG).show()
@@ -79,13 +81,14 @@ class MainActivity : AppCompatActivity() {
 
     fun tryRetrofit() {
         try {
-            var refreshUI : (String) -> Unit = {
-                    str:String ->
-                binding.txtRetrofitUserCount.text = str
+            var refreshUI : (String, String) -> Unit = {
+                    count: String, elapsed: String ->
+                binding.txtRetrofitElapsed.text = elapsed
+                binding.txtRetrofitUserCount.text = count
             }
 
-            var request = RequestsRetrofit()
-            request.getUsers(refreshUI)
+            var request = RequestsRetrofit(refreshUI)
+            request.getUsers()
         }
         catch(ex:Exception) {
             Toast.makeText(this, "TryRetrofit() $ex", Toast.LENGTH_LONG).show()
@@ -94,13 +97,14 @@ class MainActivity : AppCompatActivity() {
 
     fun tryCoroutine() {
         try {
-            var refreshUI : (String) -> Unit = {
-                    str:String ->
-                binding.txtCoroutineUserCount.text = str
+            var refreshUI : (String, String) -> Unit = {
+                    count: String, elapsed: String ->
+                binding.txtCoroutineElapsed.text = elapsed
+                binding.txtCoroutineUserCount.text = count
             }
 
-            var request = RequestsCoroutine()
-            request.getUsers(refreshUI)
+            var request = RequestsCoroutine(refreshUI)
+            request.getUsers()
         }
         catch(ex:Exception) {
             Toast.makeText(this, "tryCoroutine() $ex", Toast.LENGTH_LONG).show()
@@ -109,17 +113,17 @@ class MainActivity : AppCompatActivity() {
 
     fun tryCallback() {
         try {
-            var refreshUI : (String) -> Unit = {
-                    str:String ->
-                binding.txtCallbackUserCount.text = str
+            var refreshUI : (String, String) -> Unit = {
+                    count: String, elapsed: String ->
+                binding.txtCallbackUserCount.text = count
+                binding.txtCallbackElapsed.text = elapsed
             }
 
-            var request = RequestsCallback()
-            request.getUsers(refreshUI)
+            var request = RequestsCallback(refreshUI)
+            request.getUsers()
         }
         catch(ex:Exception) {
             Toast.makeText(this, "tryCallback() $ex", Toast.LENGTH_LONG).show()
         }
     }
-
 }

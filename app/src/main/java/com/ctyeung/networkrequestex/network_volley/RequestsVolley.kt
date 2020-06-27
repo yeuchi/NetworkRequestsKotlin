@@ -5,16 +5,20 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.ctyeung.networkrequestex.MainApplication
+import com.ctyeung.networkrequestex.base.BaseRequest
 import com.ctyeung.networkrequestex.model.User
 import com.ctyeung.networkrequestex.utilities.NetworkUtils
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.Exception
 
-class RequestsVolley {
-    var list: List<User>? = null
+class RequestsVolley:BaseRequest {
 
-    fun getUsers(refresh:((String)->Unit)? = null) {
+    constructor(refresh:((String, String)->Unit)?=null):super(refresh) {}
+
+    fun getUsers() {
+        startTimer()
+
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(MainApplication.applicationContext())
         val url = NetworkUtils.BASE_URL + NetworkUtils.USERS
@@ -23,7 +27,7 @@ class RequestsVolley {
         val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String> { response ->
                 onHandleResponse(response)
-                refresh?.invoke("size:${list?.size}")
+                refresh?.invoke("size:${list?.size}", getElapsedString())
             },
             Response.ErrorListener {
                 throw Exception("That didn't work!")

@@ -15,4 +15,5 @@
     <string name="title_coroutine">Coroutine</string>
     <string name="title_retrofit">Retrofit</string>
     <string name="title_rxretrofit">RxRetrofit</string>
+    <string name="time_elapsed">Elapsed:</string>
 </resources>

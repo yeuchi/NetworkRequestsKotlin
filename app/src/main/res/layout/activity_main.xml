@@ -33,6 +33,12 @@
                 android:id="@+id/txtVolleyUserCount"
                 android:text="0"/>
 
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtVolleyElapsed"
+                android:text="0:00"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -54,6 +60,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCallbackUserCount"
                 android:text="0"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtCallbackElapsed"
+                android:text="0:00"/>
 
         </LinearLayout>
 
@@ -77,6 +89,12 @@
                 android:id="@+id/txtCoroutineUserCount"
                 android:text="0"/>
 
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtCoroutineElapsed"
+                android:text="0:00"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -99,6 +117,12 @@
                 android:id="@+id/txtRetrofitUserCount"
                 android:text="0"/>
 
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtRetrofitElapsed"
+                android:text="0:00"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -120,6 +144,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtRxRetrofitUserCount"
                 android:text="0"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtRxRetrofitElapsed"
+                android:text="0:00"/>
 
         </LinearLayout>
 

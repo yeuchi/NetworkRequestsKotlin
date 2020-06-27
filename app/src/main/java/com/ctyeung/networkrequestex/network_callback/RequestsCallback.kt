@@ -1,18 +1,21 @@
 package com.ctyeung.networkrequestex.network_callback
 
+import com.ctyeung.networkrequestex.base.BaseRequest
 import com.ctyeung.networkrequestex.model.User
 import com.ctyeung.networkrequestex.utilities.NetworkUtils
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.Exception
 import java.net.URL
+import java.util.*
 
-class RequestsCallback : INetworkCallback {
-    var list:List<User>?=null
-    var refreshUI:((String)->Unit)?=null
+class RequestsCallback : INetworkCallback, BaseRequest {
 
-    fun getUsers(refresh:((String)->Unit)? = null) {
-        this.refreshUI = refresh
+    constructor(refresh:((String, String)->Unit)?=null):super(refresh) {}
+
+    fun getUsers() {
+        startTimer()
+
         val urlString = NetworkUtils.BASE_URL + NetworkUtils.USERS
         val url = URL(urlString)
         var request = AsyncRequest(this)
@@ -25,7 +28,8 @@ class RequestsCallback : INetworkCallback {
                 var gson = Gson()
                 val itemType = object : TypeToken<List<User>>() {}.type
                 this.list = gson.fromJson<List<User>>(str, itemType)
-                this.refreshUI?.invoke("size:${list?.size}")
+
+                this.refresh?.invoke("size:${list?.size}", getElapsedString())
                 return
             }
             catch (ex: Exception) {

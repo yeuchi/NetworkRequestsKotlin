@@ -1,17 +1,19 @@
 package com.ctyeung.networkrequestex.network_rxjava
 
+import com.ctyeung.networkrequestex.base.BaseRequest
 import com.ctyeung.networkrequestex.model.User
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class RequestsRxRetrofit {
-    var list: List<User>? = null
+class RequestsRxRetrofit : BaseRequest {
     var myCompositeDisposable = CompositeDisposable()
-    var refreshUI:((String)->Unit)?=null
 
-    fun getUsers(refresh: ((String) -> Unit)? = null) {
-        this.refreshUI = refresh
+    constructor(refresh:((String, String)->Unit)?=null):super(refresh) {}
+
+    fun getUsers() {
+        startTimer()
+
         val requestInterface = RxRetrofitBuilder.apiService
 
 //Add all RxJava disposables to a CompositeDisposable//
@@ -24,7 +26,7 @@ class RequestsRxRetrofit {
 
     private fun onHandleResponse(users:List<User>) {
         this.list = users
-        this.refreshUI?.invoke("size:${list?.size}")
+        this.refresh?.invoke("size:${list?.size}", getElapsedString())
     }
 
     fun destroy() {
