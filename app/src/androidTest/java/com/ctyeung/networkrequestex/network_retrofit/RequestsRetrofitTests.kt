@@ -5,9 +5,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 //import kotlinx.coroutines.test.runBlockingTest
 import junit.framework.Assert.assertEquals
+import java.util.*
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 class RequestsRetrofitTests {
+    val timer = Timer()
 
     @Test
     //fun getUsers() = runBlockingTest {
@@ -15,6 +17,18 @@ class RequestsRetrofitTests {
         var request = RequestsRetrofit()
         request.getUsers()
 
-        assertEquals(64, request.list?.size)
+        var i = 0
+        timer.scheduleAtFixedRate(
+            object : TimerTask() {
+
+                override fun run() {
+                    if(i==1)
+                        assertEquals(64, request.list?.size)
+
+                    i++
+                }
+            },
+            0, 1000
+        )
     }
 }

@@ -11,6 +11,7 @@ import com.ctyeung.networkrequestex.network_volley.RequestsVolley
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.databinding.DataBindingUtil
 import com.ctyeung.networkrequestex.databinding.ActivityMainBinding
+import com.ctyeung.networkrequestex.network_rxjava.RequestsRxRetrofit
 
 import java.lang.Exception
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
 
-        tryRetrofit()
+        tryRxRetrofit()
     }
 
     fun onClickVolley() {
@@ -34,12 +35,31 @@ class MainActivity : AppCompatActivity() {
         tryRetrofit()
     }
 
+    fun onClickRxRetrofit() {
+        tryRxRetrofit()
+    }
+
     fun onClickCallback() {
         tryCallback()
     }
 
     fun onClickCoroutine() {
         tryCoroutine()
+    }
+
+    fun tryRxRetrofit() {
+        try {
+            var refreshUI : (String) -> Unit = {
+                    str:String ->
+                binding.txtRxRetrofitUserCount.text = str
+            }
+
+            var request = RequestsRxRetrofit()
+            request.getUsers(refreshUI)
+        }
+        catch(ex:Exception) {
+            Toast.makeText(this, "TryRxRetrofit() $ex", Toast.LENGTH_LONG).show()
+        }
     }
 
     fun tryVolley() {

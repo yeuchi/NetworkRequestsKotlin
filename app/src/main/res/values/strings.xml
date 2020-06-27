@@ -14,4 +14,5 @@
     <string name="title_callback">Callback</string>
     <string name="title_coroutine">Coroutine</string>
     <string name="title_retrofit">Retrofit</string>
+    <string name="title_rxretrofit">RxRetrofit</string>
 </resources>
