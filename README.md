@@ -29,7 +29,7 @@ Using data from Mindorks<sup>[1]</sup>
 ## View - user interface
 Each of the network strategy can be executed individually. \
 Number of users loaded is displayed. \
-<img width="400" src="https://user-images.githubusercontent.com/1282659/85897757-933be000-b7c0-11ea-922c-ee909737d281.jpg">
+<img width="420" alt="Screen Shot 2020-06-27 at 2 34 04 PM" src="https://user-images.githubusercontent.com/1282659/85930611-7ddbba00-b883-11ea-90d5-0e6afc6ee17f.png">
 
 ## Callback - async task
 This is the traditional strategy taught by Google when using Java. \
@@ -55,8 +55,15 @@ Paolo<sup>[3]</sup> offers a nice article on the suspend method.
 
 <img width="590" alt="Screen Shot 2020-06-25 at 6 45 30 PM" src="https://user-images.githubusercontent.com/1282659/85806242-1a7f4a00-b714-11ea-8f8c-069cf03c02fe.png">
 
-# Unit Tests
+## RetroFit + RxAndroid
+Same RetroFit as above, working with RxJava library. \
+Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators.
 
+<img width="584" alt="Screen Shot 2020-06-27 at 3 16 09 PM" src="https://user-images.githubusercontent.com/1282659/85931324-32c4a580-b889-11ea-8921-062558350419.png">
+
+
+# Unit Tests
+All above strategies have espresso tests.
 https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/java/com/ctyeung/networkrequestex
 
 # References
@@ -78,3 +85,6 @@ https://github.com/udacity/ud843-QuakeReport/commit/3d6bea42dd2f67d578cfdbede67f
 5. Google Volley & trainning
 https://developer.android.com/training/volley
 https://github.com/google/volley
+
+6. Connect to an API With Retrofit, RxJava 2, and Kotlin by Jessica Thornsby, 14 Nov 2018
+https://code.tutsplus.com/tutorials/connect-to-an-api-with-retrofit-rxjava-2-and-kotlin--cms-32133
