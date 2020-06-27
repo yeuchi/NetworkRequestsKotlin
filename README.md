@@ -63,7 +63,7 @@ Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators.
 
 
 # Unit Tests
-All above strategies have espresso tests.
+All above strategies have most basic 'happy path' tests.
 https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/java/com/ctyeung/networkrequestex
 
 # References
