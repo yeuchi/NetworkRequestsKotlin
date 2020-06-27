@@ -9,7 +9,6 @@ import java.util.*
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 class RequestsRetrofitTests {
-    val timer = Timer()
 
     @Test
     //fun getUsers() = runBlockingTest {
@@ -17,18 +16,7 @@ class RequestsRetrofitTests {
         var request = RequestsRetrofit()
         request.getUsers()
 
-        var i = 0
-        timer.scheduleAtFixedRate(
-            object : TimerTask() {
+        assertEquals(64, request.list?.size)
 
-                override fun run() {
-                    if(i==1)
-                        assertEquals(64, request.list?.size)
-
-                    i++
-                }
-            },
-            0, 1000
-        )
     }
 }
